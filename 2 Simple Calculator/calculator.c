@@ -1,6 +1,6 @@
 /**
  * The below function is a simple calculator program in C that allows users to perform basic arithmetic
- * operations on two numbers.
+ * This perform operations on two numbers.
  */
 #include <stdio.h>
 #include <math.h>
