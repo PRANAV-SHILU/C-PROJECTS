@@ -1,3 +1,8 @@
+/**
+ * The below C program is a Number Guessing Game where the player has to guess a randomly generated
+ * number between 1 and 100 with feedback on each guess.
+ * @return The program is returning an integer value of 0, which indicates successful execution without any errors.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
