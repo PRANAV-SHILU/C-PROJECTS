@@ -5,7 +5,7 @@ Short, practical descriptions of common C headers and their key functions.
 ## stdio.h
 
 - Description: Standard input/output — formatted I/O, file streams, and error reporting.
-- Major functions: `printf`, `scanf`, `fprintf`, `fscanf`, `fopen`, `fclose`, `fread`, `fwrite`, `fseek`, `ftell`, `perror`, `puts`, `fflush`.
+- Major functions: `printf`, `scanf`, `fgets`, `getchar`, `fprintf`, `fscanf`, `fopen`, `fclose`, `fread`, `fwrite`, `fseek`, `ftell`, `perror`, `puts`, `fflush`.
 
 ## conio.h
 
@@ -15,7 +15,7 @@ Short, practical descriptions of common C headers and their key functions.
 ## string.h
 
 - Description: String and memory utilities — copying, concatenation, comparison, search, and block operations.
-- Major functions: `strcpy`, `strcat`, `strlen`, `strcmp`.
+- Major functions: `strcspn`, `strcpy`, `strcat`, `strlen`, `strcmp`.
 
 ## math.h
 
