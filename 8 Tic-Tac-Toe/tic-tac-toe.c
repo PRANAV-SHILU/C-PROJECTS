@@ -99,6 +99,26 @@ int is_valid_move(char board[BOARD_SIZE][BOARD_SIZE], int row, int col)
 
 void player_move(char board[BOARD_SIZE][BOARD_SIZE])
 {
+  int count = 0, x, y;
+  for (int i = 0; i < BOARD_SIZE; i++)
+  {
+    for (int j = 0; j < BOARD_SIZE; j++)
+    {
+      if (board[i][j] == ' ')
+      {
+        count++;
+        x = i;
+        y = j;
+      }
+    }
+  }
+
+  if (count == 1)
+  {
+    board[x][y] = X;
+    return;
+  }
+
   int row, col;
   do
   {
