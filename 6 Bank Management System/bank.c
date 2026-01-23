@@ -1,7 +1,7 @@
 /**
  * The below code implements a simple Bank Management System in C allowing users to create accounts,
  * deposit and withdraw amounts, check balances, and exit the system.
- * 
+ *
  * It uses file handling to store account information persistently in a binary file named "account.dat".
  * Each account is represented by a structure containing account number, name, and balance.
  * The system provides a menu-driven interface for user interaction.
