@@ -18,6 +18,7 @@
 #define O 'O'
 
 int difficulty;
+int player;
 void input_difficulty();
 void clear_screen();
 void print_board(char board[BOARD_SIZE][BOARD_SIZE]);
@@ -26,6 +27,7 @@ int check_draw(char board[BOARD_SIZE][BOARD_SIZE]);
 void play_game();
 void player_move(char board[BOARD_SIZE][BOARD_SIZE]);
 void computer_move(char board[BOARD_SIZE][BOARD_SIZE]);
+void second_player_move(char board[BOARD_SIZE][BOARD_SIZE]);
 int is_valid_move(char board[BOARD_SIZE][BOARD_SIZE], int row, int col);
 
 typedef struct
@@ -74,20 +76,30 @@ void play_game()
       {
         score.player++;
         print_board(board);
-        printf("Congratulations! You have won!\n");
+        if (player == 2)
+          printf("Congratulations! You have won!\n");
+        else
+          printf("Congratulations, Player X has won!\n");
+
         break;
       }
       current_player = O;
     }
     else
     {
-      computer_move(board);
+      if (player == 2)
+        computer_move(board);
+      else
+        second_player_move(board);
       print_board(board);
       if (check_win(board, O))
       {
         score.computer++;
         print_board(board);
-        printf("Computer has won! But you played well! Try again!\n");
+        if (player == 2)
+          printf("Computer has won! But you played well! Try again!\n");
+        else
+          printf("Congratulations, Player O has won!\n");
         break;
       }
       current_player = X;
@@ -215,25 +227,22 @@ void computer_move(char board[BOARD_SIZE][BOARD_SIZE])
   }
 }
 
-//  for multiplayer game, used 'computer_move' name for not to change code in
-//  other funcitons
-/*
-void computer_move(char board[BOARD_SIZE][BOARD_SIZE])
+//  for multiplayer game
+void second_player_move(char board[BOARD_SIZE][BOARD_SIZE])
 {
-    int row, col;
-    do
-    {
-        printf("\nPlayer O's turn,\nEnter row and column (1-3): ");
-        scanf("%d %d", &row, &col);
+  int row, col;
+  do
+  {
+    printf("\nPlayer O's turn,\nEnter row and column (1-3): ");
+    scanf("%d %d", &row, &col);
 
-        row--;
-        col--;
+    row--;
+    col--;
 
-    } while (!is_valid_move(board, row, col));
+  } while (!is_valid_move(board, row, col));
 
-    board[row][col] = O;
+  board[row][col] = O;
 }
-*/
 
 int check_win(char board[BOARD_SIZE][BOARD_SIZE], char player)
 {
@@ -299,12 +308,23 @@ void input_difficulty()
   while (1)
   {
     printf("\nWelcome to Tic-Tac-Toe\n");
-    printf("1. Human (standard)");
-    printf("\n2. God (impossible)");
-    printf("\nEnter your choice: ");
-    scanf("%d", &difficulty);
+    printf("1. MultiPlayer\n");
+    printf("2. Computer\n");
+    printf("Enter your choice: ");
+    scanf("%d", &player);
+    if (player == 2)
+    {
+      printf("1. Human (standard)");
+      printf("\n2. God (impossible)");
+      printf("\nEnter your choice: ");
+      scanf("%d", &difficulty);
 
-    if (difficulty != 1 && difficulty != 2)
+      if (difficulty != 1 && difficulty != 2)
+        printf("Invalid choice! Please try again\n");
+      else
+        break;
+    }
+    if (player != 1 && player != 2)
       printf("Invalid choice! Please try again\n");
     else
       break;
