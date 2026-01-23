@@ -1,7 +1,7 @@
 /**
  * The code implements a Tic-Tac-Toe game where the player can play against the computer in different
  * difficulty modes.
- * 
+ *
  * @return The code provided is a Tic-Tac-Toe game implemented in C. The main function initializes the
  * game by setting the difficulty level, then enters a loop to play the game and prompt the user if
  * they want to play again. The play_game function handles the game logic, alternating between player
