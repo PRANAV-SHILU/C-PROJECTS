@@ -25,7 +25,7 @@ void clear_screen()
 void print_bar(Task task)
 {
     int bars_to_show = (task.progress * BAR_LENGTH) / 100;
-    
+
     printf("Task %d:  [", task.id);
 
     for (int i = 0; i < BAR_LENGTH; i++)
