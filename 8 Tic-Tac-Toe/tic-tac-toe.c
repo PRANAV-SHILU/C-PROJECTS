@@ -314,7 +314,7 @@ void input_difficulty()
     scanf("%d", &player);
     if (player == 2)
     {
-      printf("1. Human (standard)");
+      printf("\n1. Human (standard)");
       printf("\n2. God (impossible)");
       printf("\nEnter your choice: ");
       scanf("%d", &difficulty);
