@@ -263,18 +263,21 @@ gcc "7 Sudoku Solver/sudoku.c" -o sudoku
 
 **File:** [`8 Tic-Tac-Toe/tic-tac-toe.c`](8%20Tic-Tac-Toe/tic-tac-toe.c)
 
-An interactive Tic-Tac-Toe game with AI opponent featuring two difficulty levels.
+An interactive Tic-Tac-Toe game with both multiplayer and AI opponent modes featuring two difficulty levels.
 
 **Features:**
 
-- Player vs Computer gameplay
-- Two difficulty modes:
-  - **Human mode:** Basic AI (blocks and wins)
+- **Two game modes:**
+  - **Multiplayer:** Player X vs Player O (human vs human)
+  - **Player vs Computer:** Human vs AI with two difficulty levels
+- **Computer difficulty modes:**
+  - **Human mode:** Basic AI (blocks immediate wins and attempts to win)
   - **God mode:** Advanced AI (unbeatable - uses strategic positioning)
 - Score tracking across multiple games
 - Random first player selection
 - Beautiful board visualization
 - Play-again functionality
+- Input validation for all moves
 
 **Concepts Covered:**
 
@@ -284,6 +287,7 @@ An interactive Tic-Tac-Toe game with AI opponent featuring two difficulty levels
 - Random number generation for game dynamics
 - Structures for score tracking
 - Advanced control flow
+- Conditional game mode handling
 
 **How to Run:**
 
@@ -291,6 +295,12 @@ An interactive Tic-Tac-Toe game with AI opponent featuring two difficulty levels
 gcc "8 Tic-Tac-Toe/tic-tac-toe.c" -o tictactoe -lm
 ./tictactoe
 ```
+
+**Game Modes:**
+
+- **Multiplayer:** Two players take turns as X and O
+- **Computer (Human Mode):** AI blocks and wins but plays randomly otherwise
+- **Computer (God Mode):** AI uses optimal strategy (nearly unbeatable)
 
 **AI Strategy (God Mode):**
 
